@@ -1,4 +1,7 @@
 #crea alta json para socio.json
+# gosla
+
+
 
 import json
 import os

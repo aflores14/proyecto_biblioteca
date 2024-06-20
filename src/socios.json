@@ -20,13 +20,53 @@
         "estado": "0"
     },
     {
-        "id_socio": "3",
+        "id_socio": 3,
         "nombre": "alejandro",
         "apellido": "flores",
         "fecha_nacimiento": "1980-05-15 00:00:00",
         "direccion": "cabo brasich 532",
         "correo_electronico": "ales@gmail.com",
         "telefono": "3885141337",
+        "estado": "1"
+    },
+    {
+        "id_socio": 4,
+        "nombre": "Al\u00e9jandro",
+        "apellido": "Sebasti\u00e1n",
+        "fecha_nacimiento": "1980-04-03 00:00:00",
+        "direccion": "daf",
+        "correo_electronico": "as@fds",
+        "telefono": "2344",
+        "estado": "1"
+    },
+    {
+        "id_socio": 5,
+        "nombre": "Al\u00e9j\u00f1andr\u00f3",
+        "apellido": "S\u00e9bastian",
+        "fecha_nacimiento": "1909-04-03 00:00:00",
+        "direccion": "sfa",
+        "correo_electronico": "saf",
+        "telefono": "3242",
+        "estado": "1"
+    },
+    {
+        "id_socio": 6,
+        "nombre": "akse\u00e9",
+        "apellido": "sdfas",
+        "fecha_nacimiento": "31/12/2021",
+        "direccion": "sfas",
+        "correo_electronico": "sfsa",
+        "telefono": "21132",
+        "estado": "1"
+    },
+    {
+        "id_socio": 7,
+        "nombre": "alejandro",
+        "apellido": "flores",
+        "fecha_nacimiento": "14/03/1987",
+        "direccion": "ausf",
+        "correo_electronico": "kas@gmail",
+        "telefono": "243242",
         "estado": "1"
     }
 ]

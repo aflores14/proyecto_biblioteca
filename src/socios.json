@@ -2,7 +2,7 @@
     {
         "id_socio": 1,
         "nombre": "Carlos",
-        "apellido": "López",
+        "apellido": "L\u00f3pez",
         "fecha_nacimiento": "1980-03-25",
         "direccion": "Calle 9 de Julio 456",
         "correo_electronico": "carlos.lopez@example.com",
@@ -12,11 +12,21 @@
     {
         "id_socio": 2,
         "nombre": "Ana",
-        "apellido": "Martínez",
+        "apellido": "Mart\u00ednez",
         "fecha_nacimiento": "1990-11-15",
         "direccion": "Avenida Corrientes 1234",
         "correo_electronico": "ana.martinez@example.com",
         "telefono": "123-9876",
         "estado": "0"
+    },
+    {
+        "id_socio": "3",
+        "nombre": "alejandro",
+        "apellido": "flores",
+        "fecha_nacimiento": "1980-05-15 00:00:00",
+        "direccion": "cabo brasich 532",
+        "correo_electronico": "ales@gmail.com",
+        "telefono": "3885141337",
+        "estado": "1"
     }
 ]

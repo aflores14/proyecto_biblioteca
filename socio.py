@@ -18,9 +18,9 @@ def escribir_archivo(ruta, datos):
     if os.path.exists(ruta) == False:
         return False
     
-    archivo = open(ruta, 'w')
+    archivo = open(ruta,'w',encoding='utf-8')
     #Se transforman los datos de un tipo objecto (object) a un tipo String, porque el archivo solo entiende de strings
-    string_datos = json.dumps(datos)
+    string_datos = json.dumps(datos,ensure_ascii=False)
     #Se escribe ese string
     archivo.write(string_datos)
     #Se cierra
@@ -81,7 +81,7 @@ def solicitar_fecha_separada():
 def modificar_persona(ruta, persona):
     personas = abrir_archivo(ruta)
     personas.append(persona)
-    archivo = open(ruta, 'w', encoding='UTF-8')
+    archivo = open(ruta, 'w', encoding='utf-8')
     archivo.write(json.dumps(personas))
 
 
@@ -104,7 +104,7 @@ def listar_personas(ruta):
 
 def registrar_socio(ruta):
     personas = abrir_archivo(ruta)
-    id_socio = int(ultimo_codigo(ruta)) + 1
+    id_socio = ultimo_codigo(ruta) + 1
     nombre = input("Ingrese nombre: ")
     apellido = input("Ingrese apellido: ")
     fecha_nacimiento = str(solicitar_fecha_separada())
@@ -125,11 +125,12 @@ def registrar_socio(ruta):
     personas.append(persona)
     escribir_archivo(ruta,personas)
 
+def main():
+    #inicio
+    ruta = './proyecto_biblioteca/src/socios.json'
+    registrar_socio(ruta)
+    listar_personas(ruta)
 
 
-
-#inicio
-
-ruta = './proyecto_biblioteca/src/socios.json'
-registrar_socio(ruta)
-listar_personas(ruta)
+if __name__ == '__main__':
+    main()

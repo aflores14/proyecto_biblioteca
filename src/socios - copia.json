@@ -16,15 +16,5 @@
         "direccion": "Avenida Corrientes 1234",
         "correo_electronico": "ana.martinez@example.com",
         "telefono": "123-9876"
-    },
-    {
-        "id_socio": 3,
-        "nombre": "alé",
-        "apellido": "añe",
-        "fecha_nacimiento": "12/03/1902",
-        "direccion": "af",
-        "correo_electronico": "adsf",
-        "telefono": "2121",
-        "estado": "1"
     }
 ]

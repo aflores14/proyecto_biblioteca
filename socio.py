@@ -1,32 +1,8 @@
 #Archivo socios
-
 import json
 import os
 from datetime import datetime
-
-# abrir json
-def abrir_archivo(ruta):
-    if os.path.exists(ruta) == False:
-        return False
-    archivo = open(ruta, 'r', encoding='utf-8')
-    obj_json = json.loads(archivo.read())
-    archivo.close()
-    return obj_json
-
-def escribir_archivo(ruta, datos):
-        #Revisar si el archivo el existe
-    if os.path.exists(ruta) == False:
-        return False
-    
-    archivo = open(ruta,'w',encoding='utf-8')
-    #Se transforman los datos de un tipo objecto (object) a un tipo String, porque el archivo solo entiende de strings
-    string_datos = json.dumps(datos,ensure_ascii=False)
-    #Se escribe ese string
-    archivo.write(string_datos)
-    #Se cierra
-    archivo.close()
-    return True
-
+from src.enlaces import *
 
 # baja socio: modifica el estado de un socio, 1 para activo , 0 para incactivo y -1 para suspendido
 def modificarEstado(ruta, id_socio,estado):
@@ -55,11 +31,11 @@ def modificarEstado(ruta, id_socio,estado):
 
 #registrar campo nuevo en socios.json con los datos
 
-def registrar_persona(ruta, persona):
-    personas = abrir_archivo(ruta)
-    personas.append(persona)
-    archivo = open(ruta, 'w', encoding='utf-8')
-    archivo.write(json.dumps(personas))
+# def registrar_persona(ruta, persona):
+#     personas = abrir_archivo(ruta)
+#     personas.append(persona)
+#     archivo = open(ruta, 'w', encoding='utf-8')
+#     archivo.write(json.dumps(personas))
 
 #fechas
 def solicitar_fecha_separada():
@@ -78,11 +54,11 @@ def solicitar_fecha_separada():
             print("Por favor, intenta de nuevo con valores correctos.")
 
 #registrar campo nuevo en socios.json con los datos
-def modificar_persona(ruta, persona):
-    personas = abrir_archivo(ruta)
-    personas.append(persona)
-    archivo = open(ruta, 'w', encoding='utf-8')
-    archivo.write(json.dumps(personas))
+# def modificar_persona(ruta, persona):
+#     personas = abrir_archivo(ruta)
+#     personas.append(persona)
+#     archivo = open(ruta, 'w', encoding='utf-8')
+#     archivo.write(json.dumps(personas))
 
 
 #consultar el ultimo id_socio de socio, devulve el valor

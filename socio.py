@@ -4,37 +4,41 @@ import os
 from datetime import datetime
 from src.enlaces import *
 
+ruta_socios = './proyecto_biblioteca/src/socios.json'
+
 # baja socio: modifica el estado de un socio, 1 para activo , 0 para incactivo y -1 para suspendido
-def modificarEstado(ruta, id_socio,estado):
-    personas = abrir_archivo(ruta)
+def modificarEstado(ruta_socios, id_socio,estado):
+    personas = abrir_archivo(ruta_socios)
     for persona in personas:
         if persona['id_socio'] == id_socio:
             persona['estado'] = estado
 
 
+# Modificar socio, por numero id
+def modificarSocio(ruta_socios, id_socio):
+    personas = abrir_archivo(ruta_socios)
+    for persona in personas:
+        if persona['id_socio'] == id_socio:
+            print("Modificar Persona. Para no modificarla, dejar el espacio en blanco presionando ‘Enter’")
+            persona['nombre'] = input(f"Nombre ({persona['nombre']}): ") or persona['nombre']
+            persona['apellido'] = input(f"Apellido ({persona['apellido']}): ") or persona['apellido']
+            opcion1 = input(f"Modificar la fecha de nacimiento ({persona['fecha_nacimiento']}). Si o dejar el espacio en blanco presionando ‘Enter’ para no modificar: ")
+            if opcion1 != '':            
+                persona['fecha_nacimiento'] = str(solicitar_fecha_separada())
+            persona['direccion'] = input(f"Direccion ({persona['direccion']}): ") or persona['direccion']
+            persona['telefono'] = input(f"Telefono ({persona['telefono']}): ") or persona['telefono']
+            persona['correo_electronico'] = input(f"Correo electronico ({persona['correo_electronico']}): ") or persona['correo_electronico']
+            print(persona)
+    escribir_archivo(ruta_socios,personas)
 
-# modificar socio, cambia los campos de una persona segun el id_socio
-# def modificarSocio(ruta, id_socio):
-#     personas = abrir_archivo(ruta)
-#     for persona in personas:
-#         if persona['id_socio'] == id_socio:
-#             persona['nombre'] = input("Ingresar el nombre: ")
-#             persona['apellido'] = input("Ingresar el apellido: ")
-#             persona['dni'] = input("Ingresar el dni: ")
-#             persona['fecha_nacimiento'] = input("Ingresar la fecha de nacimiento: ")
-#             persona['direccion'] = input("Ingresar la direccion: ")
-#             persona['telefono'] = input("Ingresar el telefono: ")
-#             persona['email'] = input("Ingresar el email: ")
-#             persona['estado'] = input("Ingresar el estado: ")
-#             persona['fecha_alta'] = input("Ingresar la fecha de alta: ")
 
 
 #registrar campo nuevo en socios.json con los datos
 
-# def registrar_persona(ruta, persona):
-#     personas = abrir_archivo(ruta)
+# def registrar_persona(ruta_socios, persona):
+#     personas = abrir_archivo(ruta_socios)
 #     personas.append(persona)
-#     archivo = open(ruta, 'w', encoding='utf-8')
+#     archivo = open(ruta_socios, 'w', encoding='utf-8')
 #     archivo.write(json.dumps(personas))
 
 #fechas
@@ -54,23 +58,23 @@ def solicitar_fecha_separada():
             print("Por favor, intenta de nuevo con valores correctos.")
 
 #registrar campo nuevo en socios.json con los datos
-# def modificar_persona(ruta, persona):
-#     personas = abrir_archivo(ruta)
+# def modificar_persona(ruta_socios, persona):
+#     personas = abrir_archivo(ruta_socios)
 #     personas.append(persona)
-#     archivo = open(ruta, 'w', encoding='utf-8')
+#     archivo = open(ruta_socios, 'w', encoding='utf-8')
 #     archivo.write(json.dumps(personas))
 
 
 #consultar el ultimo id_socio de socio, devulve el valor
-def ultimo_codigo(ruta):
-    personas = abrir_archivo(ruta)
+def ultimo_codigo(ruta_socios):
+    personas = abrir_archivo(ruta_socios)
     if len(personas) == 0:
         return 0
     return personas[-1]['id_socio']
 
 #listar socios
-def listar_personas(ruta):
-    personas = abrir_archivo(ruta)
+def listar_personas(ruta_socios):
+    personas = abrir_archivo(ruta_socios)
     if len(personas) == 0:
         print('No hay personas en la Base de Datos.')
     for persona in personas:
@@ -78,9 +82,9 @@ def listar_personas(ruta):
 
 #registrar nuevo socio
 
-def registrar_socio(ruta):
-    personas = abrir_archivo(ruta)
-    id_socio = ultimo_codigo(ruta) + 1
+def registrar_socio(ruta_socios):
+    personas = abrir_archivo(ruta_socios)
+    id_socio = ultimo_codigo(ruta_socios) + 1
     nombre = input("Ingrese nombre: ")
     apellido = input("Ingrese apellido: ")
     fecha_nacimiento = str(solicitar_fecha_separada())
@@ -99,13 +103,12 @@ def registrar_socio(ruta):
         "estado": "1"
     }
     personas.append(persona)
-    escribir_archivo(ruta,personas)
+    escribir_archivo(ruta_socios,personas)
 
 def main():
-    #inicio
-    ruta = './proyecto_biblioteca/src/socios.json'
-    registrar_socio(ruta)
-    listar_personas(ruta)
+    listar_personas(ruta_socios)
+    modificarSocio(ruta_socios,4)
+    listar_personas(ruta_socios)
 
 
 if __name__ == '__main__':

@@ -5,7 +5,7 @@ import os
 import time
 
 def alta_socio():
-    #abre el archivo
+    #abre el archivo 
     archivo = open("socio.json", "r")
     #lee el archivo
     datos = json.load(archivo)

@@ -7,8 +7,7 @@
         "año_publicacion": 1967,
         "genero": "Novela",
         "cantidad_disponible": 2,
-        "cantidad_eliminados" : 0,
-        "motivos_eliminados":[]
+        "eliminados": {"cantidad":0,"motivos":[]}
     },
     {
         "id_libro": 2,
@@ -18,8 +17,7 @@
         "año_publicacion": 1605,
         "genero": "Novela",
         "cantidad_disponible": 2,
-        "cantidad_eliminados" : 0,
-        "motivos_eliminados":[]
+        "eliminados": {"cantidad":0,"motivos":[]}
     },
     {
         "id_libro": 3,
@@ -29,7 +27,6 @@
         "año_publicacion": 2005,
         "genero": "Novela",
         "cantidad_disponible": 22,
-        "cantidad_eliminados" : 0,
-        "motivos_eliminados":[]
+        "eliminados": {"cantidad":0,"motivos":[]}
     }
 ]

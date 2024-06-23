@@ -6,7 +6,7 @@ from src.enlaces import *
 
 ruta_socios = './proyecto_biblioteca/src/socios.json'
 
-# baja socio: modifica el estado de un socio, 1 para activo , 0 para incactivo y -1 para suspendido
+# baja socio: modifica el estado de un socio, 1 para activo , 0 para inactivo y -1 para suspendido
 def modificarEstado(ruta_socios, id_socio,estado):
     personas = abrir_archivo(ruta_socios)
     for persona in personas:
@@ -22,24 +22,14 @@ def modificarSocio(ruta_socios, id_socio):
             print("Modificar Persona. Para no modificarla, dejar el espacio en blanco presionando ‘Enter’")
             persona['nombre'] = input(f"Nombre ({persona['nombre']}): ") or persona['nombre']
             persona['apellido'] = input(f"Apellido ({persona['apellido']}): ") or persona['apellido']
-            opcion1 = input(f"Modificar la fecha de nacimiento ({persona['fecha_nacimiento']}). Si o dejar el espacio en blanco presionando ‘Enter’ para no modificar: ")
+            opcion1 = input(f"¿Modificar la fecha de nacimiento ({persona['fecha_nacimiento']}?). Si o dejar el espacio en blanco presionando ‘Enter’ para no modificar: ")
             if opcion1 != '':            
                 persona['fecha_nacimiento'] = str(solicitar_fecha_separada())
             persona['direccion'] = input(f"Direccion ({persona['direccion']}): ") or persona['direccion']
             persona['telefono'] = input(f"Telefono ({persona['telefono']}): ") or persona['telefono']
             persona['correo_electronico'] = input(f"Correo electronico ({persona['correo_electronico']}): ") or persona['correo_electronico']
-            print(persona)
+            # print(persona)
     escribir_archivo(ruta_socios,personas)
-
-
-
-#registrar campo nuevo en socios.json con los datos
-
-# def registrar_persona(ruta_socios, persona):
-#     personas = abrir_archivo(ruta_socios)
-#     personas.append(persona)
-#     archivo = open(ruta_socios, 'w', encoding='utf-8')
-#     archivo.write(json.dumps(personas))
 
 #fechas
 def solicitar_fecha_separada():
@@ -57,13 +47,6 @@ def solicitar_fecha_separada():
             print("Fecha inválida:", e)
             print("Por favor, intenta de nuevo con valores correctos.")
 
-#registrar campo nuevo en socios.json con los datos
-# def modificar_persona(ruta_socios, persona):
-#     personas = abrir_archivo(ruta_socios)
-#     personas.append(persona)
-#     archivo = open(ruta_socios, 'w', encoding='utf-8')
-#     archivo.write(json.dumps(personas))
-
 
 #consultar el ultimo id_socio de socio, devulve el valor
 def ultimo_codigo(ruta_socios):
@@ -80,17 +63,24 @@ def listar_personas(ruta_socios):
     for persona in personas:
         print(persona)
 
-#registrar nuevo socio
+def ingresar_valor(mensaje):
+    valor = input(mensaje)
+    while valor.strip() =="":
+         valor = input(mensaje)
+    return valor
 
+#registrar nuevo socio
 def registrar_socio(ruta_socios):
     personas = abrir_archivo(ruta_socios)
     id_socio = ultimo_codigo(ruta_socios) + 1
-    nombre = input("Ingrese nombre: ")
-    apellido = input("Ingrese apellido: ")
+    print("Campos obligatorios")
+    nombre = ingresar_valor("Ingrese nombre: ")
+    apellido = ingresar_valor("Ingrese apellido: ")
+    print("Ingrese fecha de nacimiento")
     fecha_nacimiento = str(solicitar_fecha_separada())
-    direccion = input("Ingrese direccion: ")
-    correo_electronico = input("Ingrese correo electronico: ")
-    telefono = input("Ingrese telefono: ")
+    direccion = ingresar_valor("Ingrese direccion: ")
+    correo_electronico = ingresar_valor("Ingrese correo electronico: ")
+    telefono = ingresar_valor("Ingrese telefono: ")
     # estado = input("Ingrese estado (1 para activo): ")
     persona = {
         "id_socio": id_socio,
@@ -106,10 +96,10 @@ def registrar_socio(ruta_socios):
     escribir_archivo(ruta_socios,personas)
 
 def main():
+    # listar_personas(ruta_socios)
+    modificarSocio(ruta_socios,7)
+    # registrar_socio(ruta_socios)
     listar_personas(ruta_socios)
-    modificarSocio(ruta_socios,4)
-    listar_personas(ruta_socios)
-
 
 if __name__ == '__main__':
     main()

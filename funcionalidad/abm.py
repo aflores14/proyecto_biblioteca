@@ -88,11 +88,15 @@ def modificar_registro(ruta,registro,opc):
     else:
         for actual in lista:
             if registros_iguales2(actual,registro['id_libro'],opc):
-                actual['titulo'] = registro['titulo']
-                actual['autor'] = registro['autor']
-                actual['editorial'] = registro['editorial']
-                actual['año_publicacion'] = registro['año_publicacion']
-                actual['genero'] = registro['genero']
+                match opc:
+                    case 0:
+                        actual['titulo'] = registro['titulo']
+                        actual['autor'] = registro['autor']
+                        actual['editorial'] = registro['editorial']
+                        actual['año_publicacion'] = registro['año_publicacion']
+                        actual['genero'] = registro['genero']
+                    case 1:
+                        print('socio')
                 break
         archivo = open(ruta, 'w', encoding='utf-8')
         archivo.write(dumps(lista,ensure_ascii=False))

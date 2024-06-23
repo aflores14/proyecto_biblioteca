@@ -66,8 +66,5 @@
         "correo_electronico": "sdfas",
         "telefono": "2351231",
         "estado": "1"
-        // "suspendido": [{"op":1,"obs":"15/06/2024"},{"op":1,"obs":"15/06/2024"}] 1 suspendido 0 no suspendido
-        // "suspendido": 1,
-        // "fechas_suspencion":[,,]
     }
 ]

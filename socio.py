@@ -11,6 +11,10 @@ ruta_prestamos = './proyecto_biblioteca/src/prestamos.json'
 def suspenderSocios(ruta_socios,ruta_prestamos):
     personas = abrir_archivo(ruta_socios)
     prestamos = abrir_archivo(ruta_prestamos)
+    for prestamo in prestamos:
+        if prestamo['estado_prestamo'] == "En Curso":
+            prestamo['estado'] = -1
+
 
 # baja socio: modifica el estado de un socio, 1 para activo , 0 para inactivo y -1 para suspendido
 def modificarEstado(ruta_socios, id_socio,estado):

@@ -48,9 +48,8 @@ def actualizarEstadoSocios(ruta_socios,ruta_prestamos):
                 sanciones.append(sancion)
                 escribir_archivo(ruta_sanciones, sanciones)
 
-# quitar las sanciones(poner estado del socio en "1"), para que quitar las sanciones recorro los socios
-# verifico si los que tiene estado "-1", busco en sanciones la de estado activa para ese id
-# en prestamos verifico: el libro esta devuelto ("fecha_entrega"!="") y la fecha actual es mayor a "fecha_fin"
+#  verifico si los que tiene estado "-1", busco en sanciones la de estado activa para ese id
+# en prestamos verifico la devolucion y la fecha de fin de la sancion
 # cambio el estado de la sancion a "cumplido" y en el socio cambio su "estado" a "1"
 def quitarSanciones(ruta_socios,ruta_prestamos,ruta_sanciones):
     socios = abrir_archivo(ruta_socios)
@@ -62,7 +61,7 @@ def quitarSanciones(ruta_socios,ruta_prestamos,ruta_sanciones):
                 if sancion['id_socio'] == socio['id_socio'] and sancion['estado'] == "activa":
                     for prestamo in prestamos:
                         if prestamo['id_prestamo'] == sancion['id_prestamo']:
-                            if prestamo['fecha_entrega']!= "" and prestamo['fecha_devolucion'] < datetime.now().strftime('%Y-%m-%d'):
+                            if prestamo['fecha_entrega']!= "" and sancion['fecha_fin'] < datetime.now().strftime('%Y-%m-%d'):
                                 sancion['estado'] = "cumplido"
                                 socio['estado'] = "1"
                                 #guardo

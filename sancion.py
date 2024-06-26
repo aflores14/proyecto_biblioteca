@@ -72,7 +72,7 @@ def quitarSanciones(ruta_socios,ruta_prestamos,ruta_sanciones):
 
 
 def main():
-    actualizarEstadoSocios(ruta_socios,ruta_prestamos)
     quitarSanciones(ruta_socios,ruta_prestamos,ruta_sanciones)
+    actualizarEstadoSocios(ruta_socios,ruta_prestamos)
 if __name__ == '__main__':
     main()

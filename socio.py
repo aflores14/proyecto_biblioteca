@@ -59,11 +59,11 @@ def solicitar_fecha_separada():
 
 
 #consultar el ultimo id_socio de socio, devulve el valor
-def ultimo_codigo(ruta_socios):
+def ultimo_codigo(ruta_socios,id = 'id_socio'):
     personas = abrir_archivo(ruta_socios)
     if len(personas) == 0:
         return 0
-    return personas[-1]['id_socio']
+    return personas[-1][id]
 
 #listar socios
 def listar_personas(ruta_socios):

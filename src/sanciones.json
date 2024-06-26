@@ -1,0 +1,29 @@
+[
+  {
+    "id_sancion": 1,
+    "id_socio": 1,
+    "id_prestamo": 4,
+    "fecha_inicio": "2024-02-01",
+    "fecha_fin": "2024-02-15",
+    "motivo": "libro no devuelto",
+    "estado": "cumplido"
+  },
+  {
+    "id_sancion": 2,
+    "id_socio": 1,
+    "id_prestamo": 2,
+    "fecha_inicio": "2024-02-01",
+    "fecha_fin": "2024-02-15",
+    "motivo": "libro no devuelto",
+    "estado": "cumplido"
+  },
+  {
+    "id_sancion": 3,
+    "id_socio": 1,
+    "id_prestamo": 1,
+    "fecha_inicio": "2024-06-25",
+    "fecha_fin": "2024-02-08",
+    "motivo": "libro no devuelto",
+    "estado": "activa"
+  }
+]

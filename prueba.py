@@ -61,17 +61,18 @@ def suspenderSocios(ruta_socios,ruta_prestamos):
     personas = abrir_archivo(ruta_socios)
     prestamos = abrir_archivo(ruta_prestamos)
     
-
     for prestamo in prestamos:
         devolucion = datetime.strptime(prestamo['fecha_prestamo'], '%Y-%m-%d') + timedelta(days=7)
         # OP 2 if prestamo['estado_prestamo'] == "En Curso" and prestamo['fecha_prestamo'] < datetime.now().strftime('%Y-%m-%d') :
         if prestamo['estado_prestamo'] == "En Curso" and devolucion.strftime('%Y-%m-%d') < datetime.now().strftime('%Y-%m-%d') :
             print (f"Sancionar a {prestamo['id_socio']}, fecha devolucion:{devolucion.strftime('%Y-%m-%d')} - hoy: {datetime.now().strftime('%Y-%m-%d')}")
-    print (f"Sancionar, fecha devolucion:{prestamo['fecha_prestamo']} - hoy: {datetime.now().strftime('%Y-%m-%d')}")
+    # print (f"Sancionar, fecha devolucion:{prestamo['fecha_prestamo']} - hoy: {datetime.now().strftime('%Y-%m-%d')}")
+
+
 
 #print(datetime.now().strftime('%Y-%m-%d'))
-# suspenderSocios(ruta_socios,ruta_prestamos)
-# # from datetime import datetime
+suspenderSocios(ruta_socios,ruta_prestamos)
+# from datetime import datetime
 
 # # Definir las fechas en formato de cadena de texto
 # fecha_str1 = '2024-06-23'  # por ejemplo, la fecha de hoy
@@ -87,23 +88,23 @@ def suspenderSocios(ruta_socios,ruta_prestamos):
 # print(f'La diferencia entre las fechas es de {diferencia.days} días.')
 
 
-import sys
-from PySide6.QtWidgets import QApplication, QPushButton
+# import sys
+# from PySide6.QtWidgets import QApplication, QPushButton
 
-# Esta función se llamará cuando se presione el botón
-def saludar():
-    print("¡Hola desde el botón!")
+# # Esta función se llamará cuando se presione el botón
+# def saludar():
+#     print("¡Hola desde el botón!")
 
-# Crear la aplicación Qt
-app = QApplication(sys.argv)
+# # Crear la aplicación Qt
+# app = QApplication(sys.argv)
 
-# Crear el botón y configurar su texto
-boton = QPushButton("Haz clic aquí")
-boton.clicked.connect(saludar)  # Conectar la señal clicked al slot saludar
+# # Crear el botón y configurar su texto
+# boton = QPushButton("Haz clic aquí")
+# boton.clicked.connect(saludar)  # Conectar la señal clicked al slot saludar
 
-# Mostrar el botón
-boton.show()
+# # Mostrar el botón
+# boton.show()
 
-# Ejecutar el bucle principal de la aplicación
-sys.exit(app.exec_())
+# # Ejecutar el bucle principal de la aplicación
+# sys.exit(app.exec_())
 

@@ -4,9 +4,9 @@ import os
 from datetime import datetime
 from src.enlaces import *
 
-ruta_socios = './proyecto_biblioteca/src/socios.json'
-ruta_prestamos = './proyecto_biblioteca/src/prestamos.json'
-ruta_libros = '.proyectos_biblioteca/src/libros.json'
+ruta_socios = './src/socios.json'
+ruta_prestamos = './src/prestamos.json'
+ruta_libros = './src/libros.json'
 
 
 def solicitar_fecha_separada():
@@ -76,6 +76,8 @@ def buscarsocio(ruta_socios, id_socio):
 def buscaridprestamo(ruta_prestamos):
     prestamos = abrir_archivo(ruta_prestamos)
     libros = abrir_archivo(ruta_libros)
+    print(prestamos)
+    print(libros)
     busprestamo = int(input("ingrese numero de id_prestamo: "))
     for prestamo in prestamos:
         if prestamo['id_prestamo'] == busprestamo:

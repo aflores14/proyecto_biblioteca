@@ -1,6 +1,4 @@
 #Archivo socios
-import json
-import os
 from datetime import datetime, timedelta
 from socio import ultimo_codigo
 from src.enlaces import *
@@ -8,7 +6,6 @@ from src.enlaces import *
 ruta_socios = './src/socios.json'
 ruta_prestamos = './src/prestamos.json'
 ruta_sanciones = './src/sanciones.json'
-
 
 # Si la fecha de devolucion supero a la fecha actual, el libro no fue devuelto
 #  y no tiene ya sancion por ese prestamos se sanciona

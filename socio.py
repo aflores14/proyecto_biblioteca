@@ -1,6 +1,4 @@
 #Archivo socios
-import json
-import os
 from datetime import datetime
 from src.enlaces import *
 

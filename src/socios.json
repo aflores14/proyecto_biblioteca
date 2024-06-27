@@ -6,7 +6,8 @@
         "fecha_nacimiento": "1980-03-25",
         "direccion": "Calle 9 de Julio 456",
         "correo_electronico": "carlos.lopez@example.com",
-        "telefono": "456-7890"
+        "telefono": "456-7890",
+        "estado": "1"
     },
     {
         "id_socio": 2,
@@ -15,7 +16,8 @@
         "fecha_nacimiento": "1990-11-15",
         "direccion": "Avenida Corrientes 1234",
         "correo_electronico": "ana.martinez@example.com",
-        "telefono": "123-9876"
+        "telefono": "123-9876",
+        "estado": "1"
     },
     {
         "id_socio": 3,

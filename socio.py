@@ -1,6 +1,4 @@
 #Archivo socios
-import json
-import os
 from datetime import datetime
 from src.enlaces import *
 
@@ -11,6 +9,10 @@ ruta_prestamos = './proyecto_biblioteca/src/prestamos.json'
 def suspenderSocios(ruta_socios,ruta_prestamos):
     personas = abrir_archivo(ruta_socios)
     prestamos = abrir_archivo(ruta_prestamos)
+    for prestamo in prestamos:
+        if prestamo['estado_prestamo'] == "En Curso":
+            prestamo['estado'] = -1
+
 
 # baja socio: modifica el estado de un socio, 1 para activo , 0 para inactivo y -1 para suspendido
 def modificarEstado(ruta_socios, id_socio,estado):
@@ -55,11 +57,11 @@ def solicitar_fecha_separada():
 
 
 #consultar el ultimo id_socio de socio, devulve el valor
-def ultimo_codigo(ruta_socios):
+def ultimo_codigo(ruta_socios,id = 'id_socio'):
     personas = abrir_archivo(ruta_socios)
     if len(personas) == 0:
         return 0
-    return personas[-1]['id_socio']
+    return personas[-1][id]
 
 #listar socios
 def listar_personas(ruta_socios):

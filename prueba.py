@@ -3,9 +3,11 @@
 import json
 import os
 import time
+from datetime import datetime, timedelta
 from src.enlaces import *
 from socio import ultimo_codigo,solicitar_fecha_separada
 ruta_socios = './proyecto_biblioteca/src/socios.json'
+ruta_prestamos = './proyecto_biblioteca/src/prestamos.json'
 
 # modificar socio, cambia los campos de una persona segun el id_socio, muestras los valores, 
 # si no hay cambios deja los valores, sino los actualiza
@@ -55,21 +57,54 @@ def registrar_socio(ruta_socios):
     escribir_archivo(ruta_socios,personas)
 
 
-'''
-def alta_socio():
-    #abre el archivo 
-    archivo = open("socio.json", "r")
-    #lee el archivo
-    datos = json.load(archivo)
-    #cierra el archivo
-    archivo.close()
-    #abre el archivo
-    archivo = open("socio.json", "w")
-    #lee el archivo
-    datos = json.load(archivo)
-    #cierra el archivo
-    archivo.close()
-'''
+def suspenderSocios(ruta_socios,ruta_prestamos):
+    personas = abrir_archivo(ruta_socios)
+    prestamos = abrir_archivo(ruta_prestamos)
+    
+    for prestamo in prestamos:
+        devolucion = datetime.strptime(prestamo['fecha_prestamo'], '%Y-%m-%d') + timedelta(days=7)
+        # OP 2 if prestamo['estado_prestamo'] == "En Curso" and prestamo['fecha_prestamo'] < datetime.now().strftime('%Y-%m-%d') :
+        if prestamo['estado_prestamo'] == "En Curso" and devolucion.strftime('%Y-%m-%d') < datetime.now().strftime('%Y-%m-%d') :
+            print (f"Sancionar a {prestamo['id_socio']}, fecha devolucion:{devolucion.strftime('%Y-%m-%d')} - hoy: {datetime.now().strftime('%Y-%m-%d')}")
+    # print (f"Sancionar, fecha devolucion:{prestamo['fecha_prestamo']} - hoy: {datetime.now().strftime('%Y-%m-%d')}")
 
-valor = ingresar_valor("Ingrese un valor:")
-print(valor)
+
+
+#print(datetime.now().strftime('%Y-%m-%d'))
+suspenderSocios(ruta_socios,ruta_prestamos)
+# from datetime import datetime
+
+# # Definir las fechas en formato de cadena de texto
+# fecha_str1 = '2024-06-23'  # por ejemplo, la fecha de hoy
+# fecha_str2 = '2024-07-23'  # una fecha futura para el ejemplo
+
+# # Convertir las cadenas de texto a objetos datetime
+# fecha_dt1 = datetime.strptime(fecha_str1, '%Y-%m-%d')
+# fecha_dt2 = datetime.strptime(fecha_str2, '%Y-%m-%d')
+
+# # Calcular la diferencia entre las dos fechas
+# diferencia = fecha_dt2 - fecha_dt1
+
+# print(f'La diferencia entre las fechas es de {diferencia.days} días.')
+
+
+# import sys
+# from PySide6.QtWidgets import QApplication, QPushButton
+
+# # Esta función se llamará cuando se presione el botón
+# def saludar():
+#     print("¡Hola desde el botón!")
+
+# # Crear la aplicación Qt
+# app = QApplication(sys.argv)
+
+# # Crear el botón y configurar su texto
+# boton = QPushButton("Haz clic aquí")
+# boton.clicked.connect(saludar)  # Conectar la señal clicked al slot saludar
+
+# # Mostrar el botón
+# boton.show()
+
+# # Ejecutar el bucle principal de la aplicación
+# sys.exit(app.exec_())
+

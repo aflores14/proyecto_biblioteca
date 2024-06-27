@@ -47,7 +47,8 @@ def buscarsocio(ruta_socios, id_socio):
                         id_prestamo = generaridprestamo(ruta_prestamos) + 1
                         id_socio = persona['id_socio']
                         id_libro = libro['id_libro']
-                        print("Ingrese fecha de prestamo")
+                        id_cantidad = libro['cantidad_disponible'] - 1
+                        libro['cantidad_disponible'] = id_cantidad                      
                         fecha_prestamo = datetime.date.today()
                         fecha_devolucion = fecha_prestamo + datetime.timedelta(days=15)
                         fecha_entrega = " "
@@ -61,6 +62,7 @@ def buscarsocio(ruta_socios, id_socio):
                                         }
                         prestamos.append(prestamo)
                         escribir_archivo(ruta_prestamos,prestamos)
+                        escribir_archivo(ruta_libros, libros)
                     else:
                         print("No hay disponibilidad para el libro buscado")
                 else:
@@ -72,20 +74,26 @@ def buscarsocio(ruta_socios, id_socio):
 
 # buscar id de prestamo
 
-def buscaridprestamo(ruta_prestamos, id_prestamo):
+def buscaridprestamo(ruta_prestamos):
     prestamos = abrir_archivo(ruta_prestamos)
+    libros = abrir_archivo(ruta_libros)
     busprestamo = int(input("ingrese numero de id_prestamo: "))
     for prestamo in prestamos:
         if prestamo['id_prestamo'] == busprestamo:
             prestamo['fecha_entrega'] = datetime.date.today()
+            incrementar_libro = prestamo['id_libro']
+            for libro in libros:
+                if libro ['id_libro'] == incrementar_libro:
+                    libro['cantidad_disponible'] += 1
         else:
             print("id_de prestamo no existe vuelva a ingresar")
     escribir_archivo(ruta_prestamos,prestamos)
+    escribir_archivo(ruta_libros,libros)
 
 def main():
     # listar_personas(ruta_socios)
    # buscarsocio(ruta_socios,7)
-    buscaridprestamo(ruta_prestamos,1)
+    buscaridprestamo(ruta_prestamos)
     # registrar_socio(ruta_socios)
    # listar_personas(ruta_socios)
 

@@ -5,24 +5,15 @@
       "id_libro": 1,
       "fecha_prestamo": "2024-02-01",
       "fecha_devolucion": "2024-02-15",
-<<<<<<< HEAD
-      "fecha_entega": " "
-=======
-      "fecha_entrega": "2024-02-16"
->>>>>>> d0fc5df39bf095343757c99d78c1f2f184bbe619
+      "fecha_entega": ""
     },
     {
       "id_prestamo": 2,
       "id_socio": 2,
       "id_libro": 2,
       "fecha_prestamo": "2024-02-05",
-<<<<<<< HEAD
       "fecha_devolucion": "2024-02-19",
-      "fecha_entega": " "
-=======
-      "fecha_devolucion": "2024-06-24",
-      "fecha_entrega": ""
->>>>>>> d0fc5df39bf095343757c99d78c1f2f184bbe619
+      "fecha_entega": ""
     }
   ]
   

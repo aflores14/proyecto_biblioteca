@@ -47,11 +47,10 @@ def buscarsocio(ruta_socios, id_socio):
                         id_prestamo = generaridprestamo(ruta_prestamos) + 1
                         id_socio = persona['id_socio']
                         id_libro = libro['id_libro']
-                        id_cantidad = libro['cantidad_disponible'] - 1
-                        libro['cantidad_disponible'] = id_cantidad                      
+                        print("Ingrese fecha de prestamo")
                         fecha_prestamo = datetime.date.today()
                         fecha_devolucion = fecha_prestamo + datetime.timedelta(days=15)
-                        fecha_entrega = " "
+                        fecha_entrega = ""
                         prestamo = {
                             "id_prestamo" : id_prestamo,
                             "id_socio" : id_socio,
@@ -81,10 +80,6 @@ def buscaridprestamo(ruta_prestamos):
     for prestamo in prestamos:
         if prestamo['id_prestamo'] == busprestamo:
             prestamo['fecha_entrega'] = datetime.date.today()
-            incrementar_libro = prestamo['id_libro']
-            for libro in libros:
-                if libro ['id_libro'] == incrementar_libro:
-                    libro['cantidad_disponible'] += 1
         else:
             print("id_de prestamo no existe vuelva a ingresar")
     escribir_archivo(ruta_prestamos,prestamos)

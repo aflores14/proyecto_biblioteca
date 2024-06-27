@@ -5,7 +5,7 @@
       "id_libro": 1,
       "fecha_prestamo": "2024-02-01",
       "fecha_devolucion": "2024-02-15",
-      "estado_prestamo": "Devuelto"
+      "fecha_entega": " "
     },
     {
       "id_prestamo": 2,
@@ -13,7 +13,7 @@
       "id_libro": 2,
       "fecha_prestamo": "2024-02-05",
       "fecha_devolucion": "2024-02-19",
-      "estado_prestamo": "En Curso"
+      "fecha_entega": " "
     }
   ]
   

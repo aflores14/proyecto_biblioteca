@@ -2,8 +2,8 @@
 from datetime import datetime
 from src.enlaces import *
 
-ruta_socios = './proyecto_biblioteca/src/socios.json'
-ruta_prestamos = './proyecto_biblioteca/src/prestamos.json'
+ruta_socios = './src/socios.json'
+ruta_prestamos = './src/prestamos.json'
 
 # suspender socio
 def suspenderSocios(ruta_socios,ruta_prestamos):
@@ -12,6 +12,14 @@ def suspenderSocios(ruta_socios,ruta_prestamos):
     for prestamo in prestamos:
         if prestamo['estado_prestamo'] == "En Curso":
             prestamo['estado'] = -1
+
+#mostrar lista en un recuadro usando ascci
+def mostrar_lista(lista):
+    print("┌───────────────────────────────┐")
+    print("│            SOCIOS             │")
+    print("└───────────────────────────────┘")
+    for persona in lista:
+        print(f"ID:{persona['id_socio']} - Nombre:{persona['nombre']} - Apellido:{persona['apellido']}")
 
 
 # baja socio: modifica el estado de un socio, 1 para activo , 0 para inactivo y -1 para suspendido
@@ -80,7 +88,7 @@ def ingresar_valor(mensaje):
 #registrar nuevo socio
 def registrar_socio(ruta_socios):
     personas = abrir_archivo(ruta_socios)
-    id_socio = ultimo_codigo(ruta_socios) + 1
+    id_socio = ultimo_codigo(ruta_socios,"id_socio") + 1
     print("Campos obligatorios")
     nombre = ingresar_valor("Ingrese nombre: ")
     apellido = ingresar_valor("Ingrese apellido: ")
@@ -107,7 +115,7 @@ def main():
     # listar_personas(ruta_socios)
     modificarSocio(ruta_socios,7)
     # registrar_socio(ruta_socios)
-    listar_personas(ruta_socios)
+    # listar_personas(ruta_socios)
 
 if __name__ == '__main__':
     main()

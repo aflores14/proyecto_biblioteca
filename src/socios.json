@@ -68,5 +68,15 @@
         "correo_electronico": "sdfas",
         "telefono": "2351231",
         "estado": "1"
+    },
+    {
+        "id_socio": 8,
+        "nombre": "Fernando",
+        "apellido": "Gomez",
+        "fecha_nacimiento": "14/08/1990",
+        "direccion": "su casa",
+        "correo_electronico": "fer@gmail.com",
+        "telefono": "2344322",
+        "estado": "1"
     }
 ]

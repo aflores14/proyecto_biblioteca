@@ -1,4 +1,4 @@
-from conexion.rutas import obtener_ruta_libro,existe_archivo
+from funcionalidad.conexion.rutas import obtener_ruta_libro,existe_archivo
 from json import dumps
 
 #*****************************************************************************
@@ -25,7 +25,7 @@ def buscar_registro(ruta,campo,dato):
     else:
         for diccionario in lista:
             for clave,valor in diccionario.items():
-                if campo==clave and valor.find(dato)>=0:
+                if campo==clave and valor.lower().find(dato.lower())>=0:
                     lista_busqueda.append(diccionario)
     return lista_busqueda
 #*****************************************************************************

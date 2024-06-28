@@ -125,8 +125,10 @@ def elimiar_registro(ruta,registro,opc,motivo):
         return True
 #*****************************************************************************
 #leer_json(obtener_ruta_libro())
-#l = buscar_diccionario(obtener_ruta_libro(),'titulo','dad')
-#print(l)
+l = buscar_registro(obtener_ruta_libro(),'titulo','Don')
+print(l)
+
+
 libro =   {
       "id_libro": 1,
       "titulo": "Cien Años de SoledaD",

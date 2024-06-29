@@ -123,23 +123,25 @@ def elimiar_registro(ruta,registro,opc,motivo):
         archivo.write(dumps(lista,ensure_ascii=False))
         archivo.close()
         return True
-#*****************************************************************************
-#leer_json(obtener_ruta_libro())
-l = buscar_registro(obtener_ruta_libro(),'titulo','Don')
-print(l)
+    
+
+# #*****************************************************************************
+# #leer_json(obtener_ruta_libro())
+# l = buscar_registro(obtener_ruta_libro(),'titulo','Don')
+# print(l)
 
 
-libro =   {
-      "id_libro": 1,
-      "titulo": "Cien Años de SoledaD",
-      "autor": "Gabriel García Márquez",
-      "editorial": "Sudamericana",
-      "año_publicacion": 1967,
-      "genero": "Novela",
-      "cantidad_disponible": 0,
-      "eliminados" : 0
-  }
-#agregar_registro(obtener_ruta_libro(),libro,0)
-#modificar_registro(obtener_ruta_libro(),libro,0)
+# libro =   {
+#       "id_libro": 1,
+#       "titulo": "Cien Años de SoledaD",
+#       "autor": "Gabriel García Márquez",
+#       "editorial": "Sudamericana",
+#       "año_publicacion": 1967,
+#       "genero": "Novela",
+#       "cantidad_disponible": 0,
+#       "eliminados" : 0
+#   }
+# #agregar_registro(obtener_ruta_libro(),libro,0)
+# #modificar_registro(obtener_ruta_libro(),libro,0)
 
-#eliminar_registro(obtener_ruta_libro(),libro,0)
+# #eliminar_registro(obtener_ruta_libro(),libro,0)

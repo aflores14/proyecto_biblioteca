@@ -15,27 +15,36 @@ def suspenderSocios(ruta_socios,ruta_prestamos):
 
 #mostrar lista en un recuadro usando ascci
 def mostrar_lista(lista):
-    print("┌───────────────────────────────┐")
-    print("│            SOCIOS             │")
-    print("└───────────────────────────────┘")
+    print("\t┌───────────────────────────────┐")
+    print("\t│            SOCIOS             │")
+    print("\t└───────────────────────────────┘")
     for persona in lista:
-        print(f"ID:{persona['id_socio']} - Nombre:{persona['nombre']} - Apellido:{persona['apellido']}")
-
+        print(f"\t  ID:{persona['id_socio']}\t{persona['apellido']}, {persona['nombre']}")
+    print("\t─────────────────────────────────")
+# devolver una lista con solo los socios que no tengan estado 0
+def devolver_noeliminados(personas):
+    return [persona for persona in personas if persona['estado']!= "0"]
 
 # baja socio: modifica el estado de un socio, 1 para activo , 0 para inactivo y -1 para suspendido
 def modificarEstado(ruta_socios, id_socio,estado):
     personas = abrir_archivo(ruta_socios)
+    bandera = False
     for persona in personas:
         if persona['id_socio'] == id_socio:
             persona['estado'] = estado
-
+            escribir_archivo(ruta_socios,personas)
+            print(f"Socio: {persona['apellido']} {persona['nombre']} ACTUALIZADO")
+            bandera = True
+    return bandera
 
 # Modificar socio, por numero id
 def modificarSocio(ruta_socios, id_socio):
     personas = abrir_archivo(ruta_socios)
+    bandera = True
     for persona in personas:
         if persona['id_socio'] == id_socio:
-            print("Modificar Persona. Para no modificarla, dejar el espacio en blanco presionando ‘Enter’")
+            bandera = False
+            print("\nModificar Persona. Para no modificarla, dejar el espacio en blanco presionando ‘Enter’")
             persona['nombre'] = input(f"Nombre ({persona['nombre']}): ") or persona['nombre']
             persona['apellido'] = input(f"Apellido ({persona['apellido']}): ") or persona['apellido']
             opcion1 = input(f"¿Modificar la fecha de nacimiento ({persona['fecha_nacimiento']}?). Si o dejar el espacio en blanco presionando ‘Enter’ para no modificar: ")
@@ -45,6 +54,9 @@ def modificarSocio(ruta_socios, id_socio):
             persona['telefono'] = input(f"Telefono ({persona['telefono']}): ") or persona['telefono']
             persona['correo_electronico'] = input(f"Correo electronico ({persona['correo_electronico']}): ") or persona['correo_electronico']
             # print(persona)
+    if bandera:
+        print(f"\nNo se encontró el socio con ID {id_socio}")
+        return None
     escribir_archivo(ruta_socios,personas)
 
 #fechas

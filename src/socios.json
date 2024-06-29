@@ -27,16 +27,16 @@
         "direccion": "af",
         "correo_electronico": "adsf",
         "telefono": "2121",
-        "estado": "1"
+        "estado": "0"
     },
     {
         "id_socio": 4,
-        "nombre": "Alejandro",
-        "apellido": "flores",
+        "nombre": "Fernando",
+        "apellido": "Gomez",
         "fecha_nacimiento": "12/12/2024",
-        "direccion": "safas",
-        "correo_electronico": "asfa",
-        "telefono": "13123",
+        "direccion": "Casa Fer",
+        "correo_electronico": "fer@gmail.com",
+        "telefono": "4321",
         "estado": "1"
     },
     {
@@ -51,12 +51,12 @@
     },
     {
         "id_socio": 6,
-        "nombre": "Alejandro",
+        "nombre": "alejandro",
         "apellido": "Flores",
         "fecha_nacimiento": "14/02/2021",
-        "direccion": "mi cas",
-        "correo_electronico": "lae@gmail.com",
-        "telefono": "31221",
+        "direccion": "Mi House",
+        "correo_electronico": "ale@gmail.com",
+        "telefono": "2432",
         "estado": "1"
     },
     {
@@ -77,6 +77,26 @@
         "direccion": "su casa",
         "correo_electronico": "fer@gmail.com",
         "telefono": "2344322",
+        "estado": "1"
+    },
+    {
+        "id_socio": 9,
+        "nombre": "Hernan",
+        "apellido": "cruz",
+        "fecha_nacimiento": "12/09/1989",
+        "direccion": "casa de hernan",
+        "correo_electronico": "hernan@yahoo.com.ar",
+        "telefono": "123456",
+        "estado": "1"
+    },
+    {
+        "id_socio": 10,
+        "nombre": "Juan",
+        "apellido": "Perez",
+        "fecha_nacimiento": "05/03/1991",
+        "direccion": "Casa de juan",
+        "correo_electronico": "juan@gmail.com",
+        "telefono": "43321",
         "estado": "1"
     }
 ]

@@ -18,7 +18,6 @@ def buscaridprestamo(ruta_prestamos):
     print(encontrado)
     for prestamo in prestamos:
         if prestamo['id_prestamo'] == busprestamo:
-            print (prestamo['id_prestamo'])
             prestamo['fecha_entrega'] = datetime.now().strftime('%Y-%m-%d')
             for libro in libros:
               if libro['id_libro'] == prestamo['id_libro']:

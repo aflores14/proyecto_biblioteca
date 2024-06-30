@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [
     {
         "id_libro": 1,
@@ -33,3 +34,6 @@
         "motivos_eliminados": []
     }
 ]
+=======
+[{"id_libro": 1, "titulo": "Cien Años de SoledaD", "autor": "Gabriel García Márquez", "editorial": "Sudamericana", "año_publicacion": 1967, "genero": "Novela", "cantidad_disponible": 5, "cantidad_eliminados": 0, "motivos_eliminados": []}, {"id_libro": 2, "titulo": "Don Quijote de la Mancha", "autor": "Miguel de Cervantes", "editorial": "Francisco de Robles", "año_publicacion": 1605, "genero": "Novela", "cantidad_disponible": 7, "cantidad_eliminados": 0, "motivos_eliminados": []}, {"id_libro": 3, "titulo": "Don Quijote de la Mancha 2", "autor": "Miguel de Cervantes", "editorial": "Francisco de Robles", "año_publicacion": 2005, "genero": "Novela", "cantidad_disponible": 22, "cantidad_eliminados": 0, "motivos_eliminados": []}]
+>>>>>>> 1c4c5fdd9fb3b5d26e9f5f997f5bc6c6c1ff8661

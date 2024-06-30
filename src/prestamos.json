@@ -1,1 +1,18 @@
-[{"id_prestamo": 1, "id_socio": 1, "id_libro": 1, "fecha_prestamo": "2024-02-01", "fecha_devolucion": "2024-02-15", "fecha_entrega": "2024-06-28"}, {"id_prestamo": 2, "id_socio": 2, "id_libro": 2, "fecha_prestamo": "2024-02-05", "fecha_devolucion": "2024-02-19", "fecha_entrega": ""}, {"id_prestamo": 1, "id_socio": 1, "id_libro": 1, "fecha_prestamo": "2024-02-01", "fecha_devolucion": "2024-02-15", "fecha_entrega": "2024-06-28"}]
+[
+    {
+        "id_prestamo": 1,
+        "id_socio": 1,
+        "id_libro": 1,
+        "fecha_prestamo": "2024-02-01",
+        "fecha_devolucion": "2024-02-15",
+        "fecha_entrega": "2024-06-28"
+    },
+    {
+        "id_prestamo": 2,
+        "id_socio": 2,
+        "id_libro": 2,
+        "fecha_prestamo": "2024-02-05",
+        "fecha_devolucion": "2024-02-19",
+        "fecha_entrega": "2024-06-29"
+    }
+]

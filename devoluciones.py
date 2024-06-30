@@ -23,8 +23,9 @@ def buscaridprestamo(ruta_prestamos):
               if libro['id_libro'] == prestamo['id_libro']:
                     libro['cantidad_disponible'] += 1
                     print("El libro se ha devuelto")
-            prestamos.append(prestamo)
+            
             escribir_archivo(ruta_libros,libros)
+            prestamos.append(prestamo)
             escribir_archivo(ruta_prestamos,prestamos)
             break        
         

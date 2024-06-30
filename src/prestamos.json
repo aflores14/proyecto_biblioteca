@@ -14,6 +14,8 @@
         "fecha_prestamo": "2024-02-05",
         "fecha_devolucion": "2024-02-19",
         "fecha_entrega": "2024-06-29"
+<<<<<<< HEAD
+=======
     },
     {
         "id_prestamo": 1,
@@ -30,5 +32,6 @@
         "fecha_prestamo": "2024-02-05",
         "fecha_devolucion": "2024-02-19",
         "fecha_entrega": "2024-06-29"
+>>>>>>> 1c4c5fdd9fb3b5d26e9f5f997f5bc6c6c1ff8661
     }
 ]

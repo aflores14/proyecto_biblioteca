@@ -7,7 +7,7 @@
         "direccion": "Calle 9 de Julio 456",
         "correo_electronico": "carlos.lopez@example.com",
         "telefono": "456-7890",
-        "estado": "1"
+        "estado": 1
     },
     {
         "id_socio": 2,
@@ -17,7 +17,7 @@
         "direccion": "Avenida Corrientes 1234",
         "correo_electronico": "ana.martinez@example.com",
         "telefono": "123-9876",
-        "estado": "1"
+        "estado": 1
     },
     {
         "id_socio": 3,
@@ -27,7 +27,7 @@
         "direccion": "af",
         "correo_electronico": "adsf",
         "telefono": "2121",
-        "estado": "0"
+        "estado": 0
     },
     {
         "id_socio": 4,
@@ -37,7 +37,7 @@
         "direccion": "Casa Fer",
         "correo_electronico": "fer@gmail.com",
         "telefono": "4321",
-        "estado": "1"
+        "estado": 1
     },
     {
         "id_socio": 5,
@@ -47,7 +47,7 @@
         "direccion": "",
         "correo_electronico": "",
         "telefono": "",
-        "estado": "1"
+        "estado": 1
     },
     {
         "id_socio": 6,
@@ -57,7 +57,7 @@
         "direccion": "Mi House",
         "correo_electronico": "ale@gmail.com",
         "telefono": "2432",
-        "estado": "1"
+        "estado": 1
     },
     {
         "id_socio": 7,
@@ -67,7 +67,7 @@
         "direccion": "Mi Casa",
         "correo_electronico": "sdfas",
         "telefono": "2351231",
-        "estado": "1"
+        "estado": 1
     },
     {
         "id_socio": 8,
@@ -77,7 +77,7 @@
         "direccion": "su casa",
         "correo_electronico": "fer@gmail.com",
         "telefono": "2344322",
-        "estado": "1"
+        "estado": 1
     },
     {
         "id_socio": 9,
@@ -87,7 +87,7 @@
         "direccion": "casa de hernan",
         "correo_electronico": "hernan@yahoo.com.ar",
         "telefono": "123456",
-        "estado": "1"
+        "estado": 1
     },
     {
         "id_socio": 10,
@@ -97,6 +97,6 @@
         "direccion": "Casa de juan",
         "correo_electronico": "juan@gmail.com",
         "telefono": "43321",
-        "estado": "1"
+        "estado": 1
     }
 ]

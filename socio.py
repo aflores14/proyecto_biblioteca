@@ -14,12 +14,13 @@ def suspenderSocios(ruta_socios,ruta_prestamos):
             prestamo['estado'] = -1
 
 #mostrar lista en un recuadro usando ascci
-def mostrar_lista(lista):
+def mostrar_lista(lista,campo1,campo2,campo3):
     print("\t┌───────────────────────────────┐")
-    print("\t│            SOCIOS             │")
+    print("\t│            LISTAR             │")
     print("\t└───────────────────────────────┘")
     for persona in lista:
-        print(f"\t  ID:{persona['id_socio']}\t{persona['apellido']}, {persona['nombre']}")
+        if campo3:
+            print(f"\t  ID:{persona[campo1]}\t{persona[campo2]}, {persona[campo3]}")
     print("\t─────────────────────────────────")
 # devolver una lista con solo los socios que no tengan estado 0
 def devolver_noeliminados(personas):

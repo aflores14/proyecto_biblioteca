@@ -1,38 +1,26 @@
 import os
 from src.enlaces import abrir_archivo
-from socio import registrar_socio,modificarSocio,mostrar_lista,modificarEstado,devolver_noeliminados
+from socio import registrar_socio,mostrar_lista,modificarEstado,devolver_noeliminados
 from funcionalidad.abm import buscar_registro
-
+from priSocios import limpiar_pantalla
 
 ruta_socios = './src/socios.json'
 ruta_prestamos = './src/prestamos.json'
 
-# Función para limpiar la pantalla
-def limpiar_pantalla():
-    # Comando para Windows
-    if os.name == 'nt':
-        os.system('cls')
-    # Comando para Unix/Linux/Mac
-    else:
-        os.system('clear')
-
 # Función para mostrar el menú con líneas continuas ASCII
 def mostrar_menu():
-    print("┌───────────────────────────────┐")
-    print("│          MENÚ SOCIOS          │")
-    print("├───────────────────────────────┤")
-    print("│ 1. Registrar Socio            │")
-    print("│ 2. Editar Socio               │")
-    print("│ 3. Baja Socios                │")
-    print("│ 4. Listar Socios              │")    
-    print("│ 0. Volver                     │")
-    print("└───────────────────────────────┘")
+    print("┌─────────────────────────────────┐")
+    print("│          MENÚ PRESTAMOS         │")
+    print("├─────────────────────────────────┤")
+    print("│ 1. Prestamo Libro               │")
+    print("│ 2. Devolver Libro               │")
+    print("│ 3. Listar Prestamos             │")    
+    print("│ 0. Volver                       │")
+    print("└─────────────────────────────────┘")
 
 # Funciones para cada opción del menú
 def opcion4():
-    lista = abrir_archivo(ruta_socios)
-    mostrar_lista(lista)
-    input("Presiona Enter para continuar...")
+    input("Presio8na Enter para continuar...")
     limpiar_pantalla()
 
 def opcion2():
@@ -45,9 +33,13 @@ def opcion2():
             input("\nNo hay socios con el apellido ingresado. Volviendo..")
             pass
         else:
-            mostrar_lista(activos)
-            id = int(input("\nIngrese el ID del socio a modificar: "))
-            modificarSocio(ruta_socios,id)
+            mostrar_lista(activos,"id_socio","nombre","apellido")
+            id_prestamos = int(input("\nIngrese el ID del socio para verificar sus prestasmos pendientes: "))
+            listaPrestamos = buscar_registro(ruta_prestamos,"id_socio",id_prestamos)
+            print(listaPrestamos)
+            pasusa = input("Eserar..")
+            mostrar_lista(listaPrestamos,"id_prestamo","fecha_devolucion","fecha_entrega")
+            # modificarSocio(ruta_socios,id)
             input("Operacion realizada. Presiona Enter para continuar...")
     except ValueError as e:
         # print("Valor inválido:", e)
@@ -86,8 +78,6 @@ def main():
             opcion2()
         elif opcion == "3":
             opcion3()
-        elif opcion == "4":
-            opcion4()            
         elif opcion == "0":
             print("Saliendo del menú. ¡Hasta luego!")
             break

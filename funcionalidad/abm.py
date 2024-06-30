@@ -25,8 +25,16 @@ def buscar_registro(ruta,campo,dato):
     else:
         for diccionario in lista:
             for clave,valor in diccionario.items():
-                if campo==clave and valor.lower().find(dato.lower())>=0:
-                    lista_busqueda.append(diccionario)
+                if isinstance(dato, int):
+                    if campo==clave and valor==dato:
+                        print("clave.-",clave)
+                        print("dato.-",dato)
+                        pasusa = input("Eserar..int")
+                        lista_busqueda.append(diccionario)
+                elif isinstance(dato, str):
+                    if campo==clave and valor.lower().find(dato.lower())>=0:
+                        pasusa = input("Eserar..str")
+                        lista_busqueda.append(diccionario)
     return lista_busqueda
 #*****************************************************************************
 def registros_iguales(actual,nuevo,opc):
